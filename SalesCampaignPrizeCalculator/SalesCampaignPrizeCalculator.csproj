@@ -45,10 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="MagicNumbers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalesCampaignFile.cs" />
     <Compile Include="Tools\CreatFileWillOverAMillionRows.cs" />
+    <Compile Include="Tools\IsInputValid.cs" />
     <Compile Include="Tools\IsValueNumeric.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +58,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="20170824_SalesCampaignFile.txt" />
+    <Content Include="20170824_SalesCampaignFile_Wrong_AmountExceedsAMillion.txt" />
+    <Content Include="20170824_SalesCampaignFile_Wrong_FirstLineLessThanOne.txt" />
+    <Content Include="20170824_SalesCampaignFile_Wrong_FirstLineOver5000.txt" />
+    <Content Include="20170824_SalesCampaignFile_Wrong_NumberOfOrdersDayOneOverOneHundredThousand.txt" />
+    <Content Include="20170824_SalesCampaignFile_Wrong_OverAMillionOrders.txt" />
+    <Content Include="20170824_SalesCampaignFile_Wrong_SpaceFirstLine.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

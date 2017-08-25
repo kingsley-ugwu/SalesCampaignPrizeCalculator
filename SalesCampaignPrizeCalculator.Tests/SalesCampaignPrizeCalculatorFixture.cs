@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using SalesCampaignPrizeCalculator.Tools;
+using System.Collections.Generic;
 
 namespace SalesCampaignPrizeCalculator.Tests
 {
@@ -141,13 +142,33 @@ namespace SalesCampaignPrizeCalculator.Tests
                     }
 
                     [TestMethod]
-                    public void CalculateTotalPrizeGivenOutUsingExampleGiven()
+                    public void CalculateTotalPrizeGivenOutUsingExampleGivenUsingTextFile()
                     {
                               //arrange - structure of what to test
                               int expected = 19;
 
                               //act - make the call to the operations we are trying to assert
-                              int actual = Calculator.TotalPrizeMoneyGivenOut(filePath);
+                              int actual = Calculator.TotalPrizeMoneyGivenOutFromTextFile(filePath);
+
+                              //assert - assert the results
+                              Assert.AreEqual(expected, actual);
+                    }
+
+
+                    [TestMethod]
+                    public void CalculateTotalPrizeGivenOutUsingExampleFromStandardInput()
+                    {
+                              //arrange - structure of what to test
+                              List<string> lines = new List<string>(); ;
+                              lines.Add("3 1 2 3");
+                              lines.Add("2 1 1");
+                              lines.Add("4 10 5 5 1");
+                              lines.Add("0");
+                              lines.Add("1 2");
+                              int expected = 19;
+
+                              //act - make the call to the operations we are trying to assert
+                              int actual = Calculator.TotalPrizeMoneyGivenOutFromStandardInput(lines);
 
                               //assert - assert the results
                               Assert.AreEqual(expected, actual);

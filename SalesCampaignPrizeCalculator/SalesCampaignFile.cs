@@ -34,16 +34,7 @@ namespace SalesCampaignPrizeCalculator
 
                     public bool IsCampaignDayValid()
                     {
-                              if (IsFirstLineOfFileANumber())
-                              {
-                                        int row1 = int.Parse(FirstLineOfFile());
-                                        if (row1 >= 1 && row1 <= 5000)
-                                                  return true;
-                                        else
-                                                  return false;
-                              }
-                              else
-                                        return false;
+                              return IsInputValid.IsNumberOfDaysValid(FirstLineOfFile());
                     }
 
                     public bool IsNumberOfDailyOrdersValid()
@@ -56,7 +47,7 @@ namespace SalesCampaignPrizeCalculator
                                         string column1 = array[0];
                                         if (IsValueNumeric.IsNumeric(column1))
                                         {
-                                                  if (int.Parse(column1) < 0 || int.Parse(column1) > 100000)
+                                                  if (int.Parse(column1) < (int)NumberOfDailyOrders.Minimum || int.Parse(column1) > (int)NumberOfDailyOrders.Maximum)
                                                   {
                                                             result = false;
                                                             break;
@@ -78,12 +69,12 @@ namespace SalesCampaignPrizeCalculator
                               for (int i = 1; i < lines.Length; i++)
                               {
                                         var array = lines[i].Split(' ');
-                                        
+
                                         for (int j = 1; j < array.Length; j++)
                                         {
                                                   if (IsValueNumeric.IsNumeric(array[j]))
                                                   {
-                                                            if (int.Parse(array[j]) < 0 || int.Parse(array[j]) > 1000000)
+                                                            if (int.Parse(array[j]) < (int)AmountOfEachOrder.Minimum || int.Parse(array[j]) > (int)AmountOfEachOrder.Maximum)
                                                             {
                                                                       result = false;
                                                                       break;

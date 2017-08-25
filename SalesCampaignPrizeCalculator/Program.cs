@@ -8,15 +8,14 @@ namespace SalesCampaignPrizeCalculator
                     [STAThread]
                     static void Main(string[] args)
                     {
-                              //Get the user to select the file
-                              OpenFileDialog fileDilalog = new OpenFileDialog { Multiselect = false, Title = "Select the Sales Campign File To Calulate", Filter = "Text Files |*.csv;*.txt" };
-                              fileDilalog.ShowDialog();
+                              //Calll a function to calculate the total prize given out from a text file
+                              //Console.WriteLine(Calculator.TotalPrizeMoneyGivenOutFromTextFile());
 
-                              //Calll a function to calculate the total prize given out
-                              Console.WriteLine(Calculator.TotalPrizeMoneyGivenOut(fileDilalog.FileName));
+                              //Calll a function to calculate the total prize given out from a text file
+                              Console.WriteLine(Calculator.TotalPrizeMoneyGivenOutFromStandardInput());
 
                               Console.WriteLine("Press any key to exit."); // keep console window open
-                              System.Console.ReadKey(); //Read any keyboard entry as request to exit the program
+                              Console.ReadKey(); //Read any keyboard entry as request to exit the program
                     }
           }
 }

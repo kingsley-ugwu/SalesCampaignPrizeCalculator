@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SalesCampaignPrizeCalculator.Tools
 {
-          class IsValueNumeric
+          public class IsValueNumeric
           {
                     public static bool IsNumeric(object value)
                     {
